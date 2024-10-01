@@ -1,0 +1,1 @@
+ALTER TABLE "proposals" ALTER COLUMN "user_id" SET DATA TYPE integer;
