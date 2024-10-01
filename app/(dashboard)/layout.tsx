@@ -44,7 +44,7 @@ function Header() {
             <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer size-9">
-                  <AvatarImage alt={user.name || ''} />
+                  <AvatarImage alt={user.fullName || ''} />
                   <AvatarFallback>
                     {user.email
                       .split(' ')

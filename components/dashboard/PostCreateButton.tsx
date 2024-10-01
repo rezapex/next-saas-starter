@@ -12,7 +12,7 @@ const PostCreateButton: React.FC<PostCreateButtonProps> = ({ variant = 'default'
 
   const buttonClasses = variant === 'outline'
     ? 'border border-gray-300 text-gray-700 hover:bg-gray-100'
-    : 'bg-blue-500 text-white hover:bg-blue-600';
+    : 'bg-teal-600 text-white hover:bg-blue-600';
 
   return (
     <button

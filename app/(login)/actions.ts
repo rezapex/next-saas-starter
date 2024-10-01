@@ -116,7 +116,9 @@ export const signUp = validatedAction(signUpSchema, async (data, formData) => {
   const newUser: NewUser = {
     email,
     passwordHash,
-    role: 'owner', // Default role, will be overridden if there's an invitation
+    role: 'owner',
+    firstName: '',
+    lastName: ''
   };
 
   const [createdUser] = await db.insert(users).values(newUser).returning();
@@ -313,7 +315,7 @@ export const updateAccount = validatedActionWithUser(
     const userWithTeam = await getUserWithTeam(user.id);
 
     await Promise.all([
-      db.update(users).set({ name, email }).where(eq(users.id, user.id)),
+      db.update(users).set({ firstName: name, email }).where(eq(users.id, user.id)),
       logActivity(userWithTeam?.teamId, user.id, ActivityType.UPDATE_ACCOUNT),
     ]);
 
